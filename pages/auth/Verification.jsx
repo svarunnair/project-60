@@ -1,12 +1,41 @@
 import { useNavigation } from '@react-navigation/native'
 import { Icon } from '@rneui/base'
-import React from 'react'
+import React, { useState } from 'react'
 import { TouchableOpacity } from 'react-native'
 import { Image, StyleSheet, Text, TextInput, View } from 'react-native'
 
 function Verification() {
+   const [otp, setOtp] = useState('');
+    const [otp2, setOtp2] = useState('');
+     const [otp3, setOtp3] = useState('');
+      const [otp4, setOtp4] = useState('');
 
   const navigation=useNavigation()
+
+  if(otp!==""&&otp2!==""&&otp3!==""&&otp4!==""){
+    navigation.navigate("Home")
+  }
+
+  const handleOtpChange = (text) => {
+    if (text.length <= 1) {
+      setOtp(text); 
+    }
+  };
+  const handleOtpChange2 = (text) => {
+    if (text.length <= 1) {
+      setOtp2(text); 
+    }
+  };
+  const handleOtpChange3 = (text) => {
+    if (text.length <= 1) {
+      setOtp3(text); 
+    }
+  };
+  const handleOtpChange4 = (text) => {
+    if (text.length <= 1) {
+      setOtp4(text); 
+    }
+  };
 
   const handleRecent=()=>{
     navigation.navigate("Signin")
@@ -25,10 +54,22 @@ function Verification() {
 <Text style={styles.text}>Enter Verification code</Text>
 <Text style={styles.textOne}>We have just sent a verification code to your mobile number</Text>
 <View style={styles.input}>
-  <TextInput style={styles.otp}></TextInput>
-   <TextInput style={styles.otp}></TextInput>
-    <TextInput style={styles.otp}></TextInput>
-     <TextInput style={styles.otp}></TextInput>
+  <TextInput value={otp}
+        onChangeText={handleOtpChange}
+        maxLength={1} 
+        keyboardType="numeric" style={styles.otp}></TextInput>
+   <TextInput value={otp2}
+        onChangeText={handleOtpChange2}
+        maxLength={1} 
+        keyboardType="numeric"  style={styles.otp}></TextInput>
+    <TextInput value={otp3}
+        onChangeText={handleOtpChange3}
+        maxLength={1} 
+        keyboardType="numeric"  style={styles.otp}></TextInput>
+     <TextInput value={otp4}
+        onChangeText={handleOtpChange4}
+        maxLength={1} 
+        keyboardType="numeric"   style={styles.otp}></TextInput>
 </View>
 <Text style={styles.code}>Send the code again</Text>
    </View>
@@ -39,8 +80,7 @@ function Verification() {
 
 const styles=StyleSheet.create({
   container:{
-    padding:30,
-   
+    padding:0,
   },
   code:{
     color:"blue",
@@ -72,12 +112,16 @@ const styles=StyleSheet.create({
     borderWidth:2,
     height:50,
     width:50,
+    justifyContent:"center",
+    flexDirection:"row",
+    alignItems:"center",
+    textAlign:"center",
     borderRadius:10,
   }
   ,
   img:{
-    width:300,
-    height:300,
+    width:250,
+    height:200,
   },
   icon:{
     flexDirection:"row",

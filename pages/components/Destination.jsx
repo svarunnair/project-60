@@ -57,7 +57,6 @@ const styles=StyleSheet.create({
     
   },
   One:{
-    
     height:100,
   },
   temp:{
@@ -83,7 +82,7 @@ const styles=StyleSheet.create({
   },
   destination:{
  
-    backgroundColor:"#FFF5EE"
+    backgroundColor:"#EFF8FF"
   },
   mid:{
     flexDirection:"row",
