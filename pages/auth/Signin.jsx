@@ -7,7 +7,13 @@ function Signin() {
   const [num,setNum]=useState("")
   
   const handleSign=()=>{
-    navigation.navigate("Verification")
+    if(num.length!==10){
+      alert("Enter valid mobile number")
+    }
+    else{
+ navigation.navigate("Verification")
+    }
+   
   }
 
   const handleMobile=(e)=>{
@@ -15,7 +21,7 @@ function Signin() {
   }
 
   if(num===""){
-    alert("Enter mobile number")
+    alert("Enter valid mobile number")
   }
 
   console.log("value.......",num)
@@ -57,7 +63,7 @@ function Signin() {
 </View>
 
 <Pressable style={styles.button} onPress={handleSign} >
-      <Text style={styles.buttonInner}>Go to signin</Text>
+      <Text  style={styles.buttonInner}>Go to signin</Text>
   </Pressable>
     </View>
        

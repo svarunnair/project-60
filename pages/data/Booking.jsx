@@ -91,7 +91,8 @@ btnNO:{
   borderRadius:7,
 },
 scroll:{
-  marginBottom:100,
+  marginBottom:140,
+  padding:3,
 },
 btn:{
     flexDirection:"row",
