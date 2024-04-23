@@ -1,9 +1,16 @@
-import React from 'react'
-import { Button, Dimensions, Image, ScrollView, StyleSheet, Text, View } from 'react-native'
+import React, { useState } from 'react'
+import { Button, Dimensions, FlatList, Image, ScrollView, StyleSheet, Text, View } from 'react-native'
 import Cards from '../components/Cards'
 import { Icon } from 'react-native-paper'
 
+
 function Booking() {
+
+  const [length,setLength]=useState('')
+  const getData=(data)=>{
+    console.log("dt....",data) 
+    setLength(data)
+  }
   return (
     <View style={styles.container}>
     <View>
@@ -24,15 +31,19 @@ function Booking() {
            <Text style={styles.btnNO}>Flight</Text>
         </View>
         <View style={styles.hr}>
-        <Text style={styles.textOn}>ALL PACKAGES (115)</Text>
+        <Text style={styles.textOn}>ALL PACKAGES ({length})</Text>
         <Text style={styles.text}>ALL-INCLUSIVE (5)</Text>
         <Text style={styles.text}>HONEYMOON (8)</Text>
         <Text style={styles.text}> </Text>
         </View>
         <ScrollView style={styles.scroll}>
-            <Cards/>
-            <Cards/>
-              <Cards/>
+
+            <Cards ondata={getData} />
+           
+      
+
+      
+          
         </ScrollView>
         
     </View>
@@ -73,7 +84,8 @@ siteOne:{
   fontSize:12
 },
 btnNO:{
-  borderWidth:1,
+  borderWidth:.4,
+  textAlign:"center",
   width:70,
   padding:3,
   borderRadius:7,
@@ -83,7 +95,7 @@ scroll:{
 },
 btn:{
     flexDirection:"row",
-    borderWidth:2,
+
     width:deviceWidth,
     justifyContent:"space-between",
     padding:5
@@ -95,6 +107,7 @@ over:{
    left:90,
    top:70,
    textAlign:"center",
+  
     
 
 },

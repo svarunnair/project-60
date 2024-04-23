@@ -1,13 +1,24 @@
 import { useNavigation } from '@react-navigation/native'
-import React from 'react'
+import React, { useState } from 'react'
 import { Button, Image, Pressable, StyleSheet, Text, TextInput, View } from 'react-native'
 
 function Signin() {
   const navigation=useNavigation()
+  const [num,setNum]=useState("")
   
   const handleSign=()=>{
     navigation.navigate("Verification")
   }
+
+  const handleMobile=(e)=>{
+    setNum(e)
+  }
+
+  if(num===""){
+    alert("Enter mobile number")
+  }
+
+  console.log("value.......",num)
 
   return (
     <View style={styles.container}>
@@ -18,7 +29,12 @@ function Signin() {
 <Text style={styles.title}>Welcome YesGOBus</Text>
 <Text> Signin with your mobile number</Text>
 
-<TextInput placeholder='Mobile number' style={styles.input} />
+<View style={styles.input} >
+<Text style={styles.text} >+91 | </Text>
+  <TextInput  keyboardType="numeric" placeholder='Mobile number' onChangeText={handleMobile}  />
+</View>
+
+
 
 <View style={styles.hr} >
  <View style={styles.line} />
@@ -65,6 +81,9 @@ const styles=StyleSheet.create({
   },ig:{
     width:30,
     height:30,
+  },
+  text:{
+    fontWeight:"600"
   },
   licolo:{
     color:"#007AFF"
@@ -113,6 +132,7 @@ const styles=StyleSheet.create({
   },
   input:{
     borderWidth:2,
+    flexDirection:"row",
     width:300,
     padding:10,
     height:45,

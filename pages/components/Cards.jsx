@@ -1,16 +1,85 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Button, Dimensions, Image, StyleSheet, Text, View } from 'react-native'
 
-function Cards() {
+const mainData=[
+    {
+        image: "https://www.newworldhotels.com/wp-content/uploads/2014/05/Desktop-NWBJG_Exterior-%E9%85%92%E5%BA%97%E5%A4%96%E8%A7%82%E5%9B%BE.jpg",
+    name: "Hotel Himo",
+    price: "110",
+    rate: "3.4",
+    },
+    {
+       image: "https://static.toiimg.com/img/104753278/Master.jpg",
+    name: "Madrid",
+    price: "610",
+    rate: "4.4",
+    },
+    {
+       image: "https://www.itchotels.com/content/dam/itchotels/in/umbrella/itc/hotels/itcgrandgoa-goa/images/overview/hotel-expereince/sustainability.png",
+    name: "Yahoo",
+    price: "310",
+    rate: "3.4",
+    },
+    {
+      image: "https://www.itchotels.com/content/dam/itchotels/in/umbrella/itc/hotels/itcgrandgoa-goa/images/overview/hotel-expereince/cuisine.png",
+    name: "Beach view",
+    price: "2910",
+    rate: "4.1",
+    },
+    {
+      image: "https://www.planetware.com/photos-tiles/best-islands-bora-bora-5.jpg",
+    name: "Aziz view",
+    price: "5510",
+    rate: "4.9",
+    },
+    {
+      image: "https://www.planetware.com/photos-tiles/usa-best-places-miami-5.jpg",
+    name: "Lake view",
+    price: "4910",
+    rate: "4.4",
+    },
+
+]
+
+function Cards(props) {
+
+   
+    const dataLength=mainData.length
+     props.ondata(dataLength)
+
+    const [data,setData]=useState(null)
+console.log("data",data)
+
+     useEffect(()=>{
+        const fetchData=async()=>{
+            try{          
+                const res=await fetch("http://localhost:4000/data")
+                const json = await res.json();
+
+                setData(json);
+            }
+            catch(err){
+                console.log("error....",err)
+            
+            }
+        }
+        fetchData()
+    },[])
+
+    
+
   return (
     <View style={styles.container}>
-    <View style={styles.inner}>
+
+    {mainData.map((item)=>(
+
+        <View style={styles.inner}>
         <Text style={styles.off}>Best offer</Text>
         <View style={styles.box}>
-        <Image style={styles.img} source={{ uri: 'https://s3-alpha-sig.figma.com/img/b41c/7bdf/a42cf2de39ab8d7ce63a3f1f812b4cdc?Expires=1714953600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=aM~Go-nM1FLPpZV3Hn5s1T31lymJK8kOfWEUy0NcPASIXAY7XQ3y78T3WhPDLaMkkCY97J4hGkj8hxdDlgvgSMLvtnVJDN7S5e91wLhjBnU3LGZo5B5Uq-PLXXiGLkaFA3Q7F1Ufn9NTSVCm7BMcsOLFD-jSxuOkUneTvU7b9M0~qJQ8lJYSHvXiuSv-Qd2PuH4wrt~zE536tOJcYCK2LaZ1jpNMY6h2yOoKo1umTXpKsndxHghlaCMIIiC2h91EL5MCm3GWphwNSa9FJY0tLZpA3qm1QoRvPItnFKcH-~QvLa15mPLja5bBrrkHrd02Wuj-Nol5K9-oM3-4b~qg~Q__' }}/>
+        <Image style={styles.img} source={{ uri: item.image}}/>
         <View style={styles.box1} >
-            <Text style={styles.head} >Amazing goa</Text>
-            <Button title='3d'></Button>
+            <Text style={styles.head} >{item.name}</Text>
+            <Button title={item.rate}></Button>
         </View>
         <View style={styles.boxWrap} >
         <View style={styles.box1}>
@@ -32,7 +101,7 @@ function Cards() {
     
         </View>
         <View style={styles.last1}>
-             <Text style={styles.boxtext}>₹ 24,589/Person</Text> 
+             <Text style={styles.boxtext}>₹ {item.price}/Person</Text> 
          <Text style={styles.boxtext}>Total Price 48,988</Text>  
         </View>
 
@@ -44,6 +113,9 @@ function Cards() {
         </View>
     </View>
 
+
+    ))}
+    
     </View>
   )
 }
