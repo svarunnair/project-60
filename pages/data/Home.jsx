@@ -3,17 +3,82 @@ import { Button, Dimensions, ScrollView, StyleSheet, Text, TextInput, View } fro
 import Destination from '../components/Destination'
 import { Icon, color } from '@rneui/base'
 import { RadioButton } from 'react-native-paper';
+import { useNavigation } from '@react-navigation/native';
+import { useEffect } from 'react';
+import { getData } from '../../redux/action';
+import { useDispatch } from 'react-redux';
+
+
+const mainData=[
+    {
+        image: "https://www.newworldhotels.com/wp-content/uploads/2014/05/Desktop-NWBJG_Exterior-%E9%85%92%E5%BA%97%E5%A4%96%E8%A7%82%E5%9B%BE.jpg",
+    name: "Hotel Himo",
+    price: "110",
+    rate: "3.4",
+    id:"1"
+    
+    },
+    {
+       image: "https://static.toiimg.com/img/104753278/Master.jpg",
+    name: "Madrid",
+    price: "610",
+    rate: "4.4",
+    id:"2"
+    },
+    {
+       image: "https://www.itchotels.com/content/dam/itchotels/in/umbrella/itc/hotels/itcgrandgoa-goa/images/overview/hotel-expereince/sustainability.png",
+    name: "Yahoo",
+    price: "310",
+    rate: "3.4",
+    id:"3"
+    },
+    {
+      image: "https://www.itchotels.com/content/dam/itchotels/in/umbrella/itc/hotels/itcgrandgoa-goa/images/overview/hotel-expereince/cuisine.png",
+    name: "Beach view",
+    price: "2910",
+    rate: "4.1",
+    id:"4"
+    },
+    {
+      image: "https://www.planetware.com/photos-tiles/best-islands-bora-bora-5.jpg",
+    name: "Aziz view",
+    price: "5510",
+    rate: "4.9",
+    id:"5"
+    },
+    {
+      image: "https://www.planetware.com/photos-tiles/usa-best-places-miami-5.jpg",
+    name: "Lake view",
+    price: "4910",
+    rate: "4.4",
+    id:"6"
+    },
+
+]
 
 
 function Home() {
   
   const [checked, setChecked] = useState('first');
+  const navigation=useNavigation()
+  const dispatch=useDispatch()
+
+  const handleSearch=()=>{
+    navigation.navigate("Search")
+  }
+
+
+
+  useEffect(()=>{
+    dispatch(getData(mainData))
+},[])
+
   return (
     <View style={styles.container}>
 
     <ScrollView>
        <View>
-        <Text>Hi Karthik</Text>
+        <Text>Hi..! </Text>
         <View style={styles.key} >
           <Text style={styles.title}>Where Tou Wanna Go?</Text>
           <Icon   type='ionicon' name='notifications-outline'></Icon>
@@ -23,7 +88,7 @@ function Home() {
        </View>
 
 <View style={styles.wrap}>
-       <TextInput placeholder='Search' style={styles.inputOne} ></TextInput>
+       <TextInput placeholder='Search' style={styles.inputOne} onPressIn={handleSearch} ></TextInput>
          <Icon color={"white"} style={styles.search} type='ionicon' name='search-outline'></Icon>
        </View>
        <View style={styles.icon}>
@@ -54,6 +119,7 @@ function Home() {
          <Text style={styles.midText}> Collage Students</Text>
        
           <Text style={styles.midText}> Corporate</Text>
+
           </View>
        </View>
 

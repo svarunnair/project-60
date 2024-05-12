@@ -1,16 +1,33 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Button, Dimensions, FlatList, Image, ScrollView, StyleSheet, Text, View } from 'react-native'
 import Cards from '../components/Cards'
 import { Icon } from 'react-native-paper'
+import { useDispatch, useSelector } from 'react-redux'
+import { store } from '../../redux/store'
+import { getData } from '../../redux/action'
 
 
 function Booking() {
 
   const [length,setLength]=useState('')
-  const getData=(data)=>{
+  const dispatch=useDispatch()
+  const mainData=useSelector((store)=>store.data.dataGet)
+  
+
+  console.log("Length__new",mainData)
+
+const newData=mainData.map((item)=>{
+  return item
+})
+
+console.log("NewData",newData.length)
+
+  
+  const getDataOne=(data)=>{
     console.log("dt....",data) 
     setLength(data)
   }
+
   return (
     <View style={styles.container}>
     <View>
@@ -31,14 +48,14 @@ function Booking() {
            <Text style={styles.btnNO}>Flight</Text>
         </View>
         <View style={styles.hr}>
-        <Text style={styles.textOn}>ALL PACKAGES ({length})</Text>
+        <Text style={styles.textOn}>ALL PACKAGES ({newData.length})</Text>
         <Text style={styles.text}>ALL-INCLUSIVE (5)</Text>
         <Text style={styles.text}>HONEYMOON (8)</Text>
         <Text style={styles.text}> </Text>
         </View>
         <ScrollView style={styles.scroll}>
 
-            <Cards ondata={getData} />
+            <Cards ondata={getDataOne} />
            
       
 

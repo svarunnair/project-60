@@ -30,7 +30,7 @@ function Signin() {
     <View style={styles.container}>
     <View style={styles.inner}>
 
-    <Image style={styles.logo} source={{uri:"https://s3-alpha-sig.figma.com/img/4c9c/2945/17a4ebd6d800171a529a0469c77eb15f?Expires=1714953600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=agKh2mq-2QD9-cysneuHiqxLsx1GKL7YsEE4ATan797EvPOFOxs2iFbh68W2VECfxkj5TNy6SwA4MyGbvONxNkFUjl1SaTXhV4bkp9Zd4oxv9d001zF-iGMQBjYlpfCqAEFGxugm~PmAPbx7xHRS93Mb7jZg5PdbIw3rAHDlbgaN4PWz25FAWtYwUh2GGUNRDvSi6oqwbtWd2qlSW8k-YTHIQS0uEQctMueoQI-ZQYS66MD0x8cbGNCI5073mhkqiyXSMkWPgWS~wlJ8nplGu4wgptSNRanY5-tJYSaAo5LcE7NvD1m2hb0sAhhygYhMbYf7z~O5-oKKl6Ua-Hpyxg__"}}/>
+    <Image style={styles.logo} source={{uri:"https://e7.pngegg.com/pngimages/255/741/png-clipart-busonlineticket-discounts-and-allowances-hotel-bus-blue-logo-thumbnail.png"}}/>
 
 <Text style={styles.title}>Welcome YesGOBus</Text>
 <Text> Signin with your mobile number</Text>
@@ -48,13 +48,13 @@ function Signin() {
   <View style={styles.line} />
  </View>
 <View style={styles.disc}>
-<Image style={styles.ig} source={{uri:"https://s3-alpha-sig.figma.com/img/d04b/0267/2595cc4c1af2ee912306f37d44fbd494?Expires=1714953600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=Lm1QXlU-QrbfBD7dGzK0SOmhIATudPW7lLoYj8OnsdY85W2dl9b3NS3RXtj2mezABVVGiCBUIQemZelABVtunP-f1REAMLGPHGjVDafJZ2Ln~hJ~fSsVyrAX2aduZogrVF6KhmMmgXItjM9cSNk1gk4izIkcK-UzdPwz1-LVp7i5J2e4xIJy8GXZqBUd0WNM-3tZCBMlgPF48~MBiNi4DQtdOzWiDKIBlwfqfHhw1IDFLFZFOFHpmZFoKC98T5XYdDTjsoHrtzheMmiIY4YdKdA-RuDxVAQYhVEX7xwcenPBQLsseFlyYOfcog7-axkbrsr47YnW2A6TCKhr~WTgpA__"}}/>
+<Image style={styles.ig} source={{uri:"https://cdn-icons-png.flaticon.com/256/124/124010.png"}}/>
   <Text>Continue with Facebook</Text>
 </View>
-<View style={styles.disc}><Image style={styles.ig} source={{uri:"https://s3-alpha-sig.figma.com/img/bbc0/0dd0/ed24bd5e244df9812c3c32e540eb6fb4?Expires=1714953600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=MjxwwiRe26Vm4l1j-xmKwO-MdofzhCKkjKzokwApVZz0k9WvyeP5AVI4qQ38sQGSjoocURS-8tVZEqvXxc6W1p4IbmrWWEgnJlUj8KFMj2EQtjZUi~nD0q5iLQfrUUqPpJj3Vo7DBibmxKZtDHNk76-icM~yOGIKiC004Y7BAxlyMWX-1XQZSDQewKczJ4VTx68O0G6ZYdSurkC8vl23GzsnuoGZj7k43PEJqxXbbOLdf7NMlzBD7gO3R7BzjuZbg38CIyOW7HClEP59H-JFoM3sprfzBus3oltKIqQZ4LoL8mYmKEiOuoJEm72atLdOl0c2didP9UsfMvTW6jKDow__"}}/>
+<View style={styles.disc}><Image style={styles.ig} source={{uri:"https://cdn1.iconfinder.com/data/icons/google-s-logo/150/Google_Icons-09-512.png"}}/>
   <Text>Continue with Google</Text>
 </View>
-<View style={styles.disc}><Image style={styles.ig} source={{uri:"https://s3-alpha-sig.figma.com/img/d6cd/5666/8298d1be56a8ba51644d10f35ecbee71?Expires=1714953600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=KRbIKQMAQSuHQVkl94vUTh5PBzjAiqp3j~iCKUwcj4W3oQrQzmKt3~qxgVZ-RHAcrKlOVrtAp-mXYCEpd3fQa3XFZc2ZcqjObdaqKRkkWkvUFEztT93nQesjYlV0e5JS2EzAeYnQFUmX7rlaDMtvbh8z1X6xV3EH2zXW9iCrgR1AJGSaMvCQSjAslDwIYVOjldd~3TwLCcojPjIMQVGa5sQ2SCzJmL5VEL0TzqZRw0CYxkEBQ4UtBQ7IhE223fTHG-INCBOmnUXC4Dpo8~lWYEi1d2OyFGJPP0KPYZU9ZhVtkWHjd~c7WDTeZHzmX3taXxm7rLm7t9cDNelO3frndw__"}}/>
+<View style={styles.disc}><Image style={styles.ig} source={{uri:"https://i.pinimg.com/736x/65/22/5a/65225ab6d965e5804a632b643e317bf4.jpg"}}/>
   <Text>Continue with Apple</Text>
 </View>
 <View style={styles.li}>
@@ -146,8 +146,9 @@ const styles=StyleSheet.create({
   },
   logo:{
     width:300,
-    height:100,
-    
+    height:200,
+    borderRadius:20,
+        
   }
 })
 

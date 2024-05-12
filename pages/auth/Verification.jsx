@@ -50,7 +50,7 @@ function Verification() {
     <View style={styles.container}>
    
    <View style={styles.inner}>
-   <Image style={styles.img} source={{uri:"https://s3-alpha-sig.figma.com/img/0c62/a75e/482768c5fe484a70f254be682002a994?Expires=1714953600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=FpT09Hy~rAjLsSUkVRCWRyyx-8yOxhR0DHhLKKqQOFNQ2LWVCuueegPvSNBxlFybH8C9oQT4MfoUVWvcYtONljrCQK6W4gtSZBDFSxP4n88bE3I8VoBgIoz2hH8BHX7EPx6GeFiUgA91JSMTH7cm8hfqVt5vFOsuPB9blveNtcnVFzonsgUniyGVbWGJwLo6fP1Xdiwfiq~lO3uZ8u30jjC3~QI8lUZpDNSVwpofE5ptf~lPvaYJTYD7tLQKjXteBHJWzfXyh1XHabDZ8E-jW9Bdbv0fAPKTSdVmi3MiEgeXZwL9Ma~MTcjmj4wwGmg-mmSrR4luQL0LyvObEjYZ2g__"}}/>
+   <Image style={styles.img} source={{uri:"https://t3.ftcdn.net/jpg/05/22/42/06/360_F_522420661_5kiI2AiF3pOCgUwl4hveh88dAZDaD9Ol.jpg"}}/>
 <Text style={styles.text}>Enter Verification code</Text>
 <Text style={styles.textOne}>We have just sent a verification code to your mobile number</Text>
 <View style={styles.input}>

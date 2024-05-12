@@ -1,5 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { Button, Dimensions, Image, StyleSheet, Text, View } from 'react-native'
+import { useDispatch, useSelector } from 'react-redux'
+import { store } from '../../redux/store'
+import { getData } from '../../redux/action'
+
 
 const mainData=[
     {
@@ -46,27 +50,20 @@ function Cards(props) {
    
     const dataLength=mainData.length
      props.ondata(dataLength)
+     const dispatch=useDispatch()
 
-    const [data,setData]=useState(null)
-console.log("data",data)
+     const mainDataCard=useSelector((store)=>store.data.dataGet)
+
+     console.log("maindata_Card/....?",mainDataCard)
+
 
      useEffect(()=>{
-        const fetchData=async()=>{
-            try{          
-                const res=await fetch("http://localhost:4000/data")
-                const json = await res.json();
+        dispatch(getData())
+     },[])
 
-                setData(json);
-            }
-            catch(err){
-                console.log("error....",err)
-            
-            }
-        }
-        fetchData()
-    },[])
+    const [data,setData]=useState(null)
+    console.log("data",data)
 
-    
 
   return (
     <View style={styles.container}>
