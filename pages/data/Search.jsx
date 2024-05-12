@@ -56,7 +56,7 @@ setValue(searchData)
 
         {value.map((item)=>(
           <View style={styles.inner}>
-          <TouchableOpacity onPress={()=>handleImg(item.id)}>
+          <TouchableOpacity onPress={()=>handleImg(item.name)}>
          <Image source={{uri:item.image}} style={styles.image}/>
          </TouchableOpacity>
          <View style={styles.wrap}>
@@ -119,6 +119,7 @@ const styles=StyleSheet.create({
   
     width:"100%",
     marginTop:20,
+    marginBottom:70,
   }
 })
 

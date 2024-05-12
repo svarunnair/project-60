@@ -11,7 +11,7 @@ function Routes() {
      const Stack = createNativeStackNavigator()
   return (
     <NavigationContainer>
-         <Stack.Navigator initialRouteName='Home'
+         <Stack.Navigator initialRouteName='Signin'
         screenOptions={{
           statusBarColor:"black",
           headerStyle:{
