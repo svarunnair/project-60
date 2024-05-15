@@ -7,11 +7,12 @@ import Home from '../pages/data/Home';
 import Booking from '../pages/data/Booking';
 import Search from '../pages/data/Search';
 import Detail from '../pages/data/Detail';
+import Car from '../pages/data/Car';
 function Routes() {
      const Stack = createNativeStackNavigator()
   return (
     <NavigationContainer>
-         <Stack.Navigator initialRouteName='Signin'
+         <Stack.Navigator initialRouteName='Car'
         screenOptions={{
           statusBarColor:"black",
           headerStyle:{
@@ -28,6 +29,7 @@ function Routes() {
                <Stack.Screen name="Booking" component={Booking}/>
                 <Stack.Screen name="Search" component={Search}/>
                 <Stack.Screen name="Detail" component={Detail}/>
+                 <Stack.Screen name="Car" component={Car}/>
 
         </Stack.Navigator>
     </NavigationContainer>

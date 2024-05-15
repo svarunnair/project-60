@@ -46,6 +46,7 @@ console.log("NewData",newData.length)
          <Text style={styles.btnNO}>Filter</Text>
           <Text style={styles.btnNO}> Duration</Text>
            <Text style={styles.btnNO}>Flight</Text>
+           
         </View>
         <View style={styles.hr}>
         <Text style={styles.textOn}>ALL PACKAGES ({newData.length})</Text>

@@ -7,6 +7,7 @@ import { useNavigation } from '@react-navigation/native';
 import { useEffect } from 'react';
 import { getData } from '../../redux/action';
 import { useDispatch } from 'react-redux';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 
 const mainData=[
@@ -62,10 +63,33 @@ function Home() {
   const [checked, setChecked] = useState('first');
   const navigation=useNavigation()
   const dispatch=useDispatch()
+  const [value,setValue]=useState('')
 
   const handleSearch=()=>{
     navigation.navigate("Search")
   }
+
+  const handleRoom=(e)=>{
+    console.log("Value..........",e)
+    setValue(e)
+  }
+
+
+
+  const handleBook=async()=>{
+    try{
+      await AsyncStorage.setItem("Booking",value)
+      console.log("Booking Successfull")
+    }
+    catch(err){
+      console.log("err",err)
+    }
+  }
+
+  const handleCar=()=>{
+    navigation.navigate("Car")
+  }
+  
 
 
 
@@ -101,8 +125,8 @@ function Home() {
           <Text>Bus</Text>
         </View>
          <View style={styles.iconBox}>
-          <Icon type='ionicon' name='car-outline'></Icon>
-          <Text>Car</Text>
+          <Icon onPress={handleCar} type='ionicon' name='car-outline'></Icon>
+          <Text >Car</Text>
          </View>
           <View style={styles.iconBox}>
             <Icon type='ionicon' name='file-tray-stacked-outline'></Icon>
@@ -125,12 +149,13 @@ function Home() {
 
 
          <TextInput placeholder="From" style={styles.input} ></TextInput>
-           <TextInput placeholder="To" style={styles.input} ></TextInput>
-             <TextInput placeholder="Date"  style={styles.input} ></TextInput>
+           <TextInput placeholder="To" style={styles.input}></TextInput>
+             <TextInput placeholder="Date" type="date"  style={styles.input} ></TextInput>
+               
                <TextInput placeholder="Travel Type" style={styles.input} ></TextInput>
-                 <TextInput placeholder="Room & Guest" style={styles.input} ></TextInput>
+                 <TextInput placeholder="Room & Guest" style={styles.input} onChangeText={handleRoom}></TextInput>
                  <View style={styles.btnWrap} >
-<Text style={styles.btn}>Seacrch</Text>
+<Text style={styles.btn} onPress={handleBook}>Book</Text>
                  </View>
                  
 
