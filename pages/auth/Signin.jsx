@@ -1,17 +1,27 @@
 import { useNavigation } from '@react-navigation/native'
 import React, { useState } from 'react'
-import { Button, Image, Pressable, StyleSheet, Text, TextInput, View } from 'react-native'
+import { Button, Image, ImageComponent, Pressable, StyleSheet, Text, TextInput, View } from 'react-native'
+import AsyncStorage from '@react-native-async-storage/async-storage'
 
 function Signin() {
   const navigation=useNavigation()
   const [num,setNum]=useState("")
+  const [user,setUser]=useState("")
   
-  const handleSign=()=>{
+  const handleSign=async()=>{
     if(num.length!==10){
       alert("Enter valid mobile number")
     }
+     if(num===""){
+    alert("Enter valid mobile number")
+  }
+  if(user===""){
+    alert("Kindly enter user name")
+  }
     else{
  navigation.navigate("Verification")
+ await AsyncStorage.setItem("user",user)
+
     }
    
   }
@@ -20,9 +30,11 @@ function Signin() {
     setNum(e)
   }
 
-  if(num===""){
-    alert("Enter valid mobile number")
+  const handleUser=(e)=>{
+    setUser(e)
   }
+
+ 
 
   console.log("value.......",num)
 
@@ -34,6 +46,10 @@ function Signin() {
 
 <Text style={styles.title}>Welcome YesGOBus</Text>
 <Text> Signin with your mobile number</Text>
+
+<View style={styles.input} >
+  <TextInput  keyboardType="text" placeholder='User name' onChangeText={handleUser}  />
+</View>
 
 <View style={styles.input} >
 <Text style={styles.text} >+91 | </Text>
@@ -76,7 +92,7 @@ const styles=StyleSheet.create({
     flexDirection: 'column',  
     justifyContent: 'center',  
     alignItems: 'center', 
-    padding:30,
+    padding:10,
   },
   li:{
     flexDirection:"row"
@@ -145,8 +161,8 @@ const styles=StyleSheet.create({
     borderRadius:20,
   },
   logo:{
-    width:300,
-    height:200,
+    width:200,
+    height:100,
     borderRadius:20,
         
   }

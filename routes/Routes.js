@@ -12,7 +12,7 @@ function Routes() {
      const Stack = createNativeStackNavigator()
   return (
     <NavigationContainer>
-         <Stack.Navigator initialRouteName='Car'
+         <Stack.Navigator initialRouteName='Home'
         screenOptions={{
           statusBarColor:"black",
           headerStyle:{

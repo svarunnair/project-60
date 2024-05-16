@@ -64,7 +64,9 @@ function Home() {
   const navigation=useNavigation()
   const dispatch=useDispatch()
   const [value,setValue]=useState('')
-
+  const [user,setUser]=useState('')
+  
+  console.log("user......",user)
   const handleSearch=()=>{
     navigation.navigate("Search")
   }
@@ -90,6 +92,11 @@ function Home() {
     navigation.navigate("Car")
   }
   
+useEffect(async()=>{
+  const name= await AsyncStorage.getItem("user")
+  setUser(name)
+},[])
+
 
 
 
@@ -102,7 +109,7 @@ function Home() {
 
     <ScrollView>
        <View>
-        <Text>Hi..! </Text>
+        <Text style={styles.user}>Hi {user}</Text>
         <View style={styles.key} >
           <Text style={styles.title}>Where Tou Wanna Go?</Text>
           <Icon   type='ionicon' name='notifications-outline'></Icon>
@@ -202,6 +209,10 @@ key:{
     width:deviceWidth,
     flexDirection:"row",
     justifyContent:"space-between"
+  },
+  user:{
+    fontSize:12,
+    fontWeight:"500"
   },
   btn:{
  padding:4,
