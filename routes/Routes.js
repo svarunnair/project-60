@@ -13,7 +13,7 @@ function Routes() {
   return (
     <NavigationContainer>
          <Stack.Navigator initialRouteName='Home'
-        screenOptions={{
+          screenOptions={{
           statusBarColor:"black",
           headerStyle:{
             backgroundColor:"#8FBC8F"
@@ -21,7 +21,6 @@ function Routes() {
           headerShown:false,
           headerTintColor:"black",
           headerTitleAlign:"center"
-
         }}>
               <Stack.Screen name="Signin" component={Signin}/>           
               <Stack.Screen name="Verification" component={Verification}/>
