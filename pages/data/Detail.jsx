@@ -7,6 +7,7 @@ function Detail({route}) {
     const { id } = route.params;
 
   console.log("ID:", id);
+  console.log("object")
  
   const detail=useSelector((store)=>store.data.dataGet)
   const dispatch=useDispatch()
