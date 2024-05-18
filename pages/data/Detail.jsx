@@ -17,9 +17,9 @@ function Detail({route}) {
   const showDetail=detail.filter((item)=>item.name===id)
 
   console.log("filter........",showDetail)
-  useEffect(()=>{
-    dispatch(getData())
-  },[])
+
+
+
    
 
   return (
@@ -41,7 +41,6 @@ function Detail({route}) {
   )
 }
 
-const screenHeight = Dimensions.get('window').height;
 
 const style=StyleSheet.create({
   container:{

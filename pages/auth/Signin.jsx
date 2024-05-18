@@ -7,6 +7,8 @@ function Signin() {
   const navigation=useNavigation()
   const [num,setNum]=useState("")
   const [user,setUser]=useState("")
+
+  console.log("num",num)
   
   const handleSign=async()=>{
     if(num.length!==10){
