@@ -14,7 +14,7 @@ function Search() {
   const dispatch=useDispatch()
   const navigation=useNavigation()
 
-  
+console.log("value")
 
   const handleChange=(value)=>{
    let searchValue = search.filter((item) => {
