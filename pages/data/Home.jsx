@@ -75,7 +75,7 @@ function Home() {
     console.log("Value..........",e)
     setValue(e)
   }
-
+console.log("object")
 
 
   const handleBook=async()=>{
