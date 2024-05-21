@@ -21,7 +21,7 @@ const newData=mainData.map((item)=>{
 })
 
 console.log("NewData",newData.length)
-
+console.log("object")
   
   const getDataOne=(data)=>{
     console.log("dt....",data) 
