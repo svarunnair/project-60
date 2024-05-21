@@ -15,6 +15,7 @@ function Booking() {
   
 
   console.log("Length__new",mainData)
+  console.log("object")
 
 const newData=mainData.map((item)=>{
   return item
